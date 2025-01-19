@@ -5,36 +5,43 @@ let cambioIndex = -1;
 
 const form = document.getElementById('crudForm');
 const surName = document.getElementById('nameSurname');
-const gmail= document.getElementById('gmail')
-const classNumber = document.getElementById('classNumber')
-const itemList = document.getElementById('itemList'); // Corregido
+const gmail = document.getElementById('gmail');
+const classNumber = document.getElementById('classNumber');
+const itemList = document.getElementById('itemList');
+
+// Cargar elementos desde localStorage al iniciar
+function loadItems() {
+    const storedItems = localStorage.getItem('items');
+    if (storedItems) {
+        items = JSON.parse(storedItems);
+        renderItems();
+    }
+}
 
 form.addEventListener('submit', function(event) {
     event.preventDefault();
     const nameValue = surName.value.trim();
-    const gmailValue = gmail.value.trim()
-    const classValue = classNumber.value.trim()
+    const gmailValue = gmail.value.trim();
+    const classValue = classNumber.value.trim();
 
     if (cambioIndex === -1) {
         // Crear
         items.push({ name: nameValue, gmail: gmailValue, class: classValue });
-        localStorage.setItem('items', JSON.stringify(items));
     } else {
         // Actualizar
-        items[cambioIndex] = {name: nameValue, gmail: gmailValue, class: classValue};
+        items[cambioIndex] = { name: nameValue, gmail: gmailValue, class: classValue };
         cambioIndex = -1; // Resetear el índice de edición
-        localStorage.setItem('items', JSON.stringify(items));
     }
 
+    // Guardar en localStorage
+    localStorage.setItem('items', JSON.stringify(items));
+
+    // Limpiar los campos
     surName.value = '';
     gmail.value = '';
     classNumber.value = '';
     renderItems();
 });
-
-function getItems() {
-    return JSON.parse(localStorage.getItem('items')) || [];
-}
 
 function renderItems() {
     itemList.innerHTML = ''; // Limpiar la tabla
@@ -82,5 +89,10 @@ function editItem(index) {
 
 function deleteItem(index) {
     items.splice(index, 1);
-    renderItems();
+    // Actualizar localStorage después de eliminar
+    localStorage.setItem('items', JSON.stringify(items));
+    renderItems(); // Renderizar los elementos después de eliminar
 }
+
+// Cargar elementos al iniciar
+loadItems();
