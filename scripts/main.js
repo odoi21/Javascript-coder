@@ -18,10 +18,12 @@ form.addEventListener('submit', function(event) {
     if (cambioIndex === -1) {
         // Crear
         items.push({ name: nameValue, gmail: gmailValue, class: classValue });
+        localStorage.setItem('items', JSON.stringify(items));
     } else {
         // Actualizar
         items[cambioIndex] = {name: nameValue, gmail: gmailValue, class: classValue};
         cambioIndex = -1; // Resetear el índice de edición
+        localStorage.setItem('items', JSON.stringify(items));
     }
 
     surName.value = '';
@@ -29,6 +31,10 @@ form.addEventListener('submit', function(event) {
     classNumber.value = '';
     renderItems();
 });
+
+function getItems() {
+    return JSON.parse(localStorage.getItem('items')) || [];
+}
 
 function renderItems() {
     itemList.innerHTML = ''; // Limpiar la tabla
