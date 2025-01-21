@@ -3,7 +3,7 @@ alert("Hola, Bienvenido a Register-List. Esta es una app web donde podrás lleva
 let items = [];
 let cambioIndex = -1;
 
-const form = document.getElementById('crudForm');
+const form = document.getElementById('formStudients');
 const surName = document.getElementById('nameSurname');
 const gmail = document.getElementById('gmail');
 const classNumber = document.getElementById('classNumber');
@@ -18,7 +18,7 @@ function loadItems() {
     }
 }
 
-form.addEventListener('submit', function(event) {
+form.addEventListener('submit', function (event) {
     event.preventDefault();
     const nameValue = surName.value.trim();
     const gmailValue = gmail.value.trim();
@@ -62,18 +62,22 @@ function renderItems() {
 
         // Columna de acciones
         const tdActions = document.createElement('td');
-        
+
         // Botón de editar
         const editButton = document.createElement('button');
         editButton.textContent = 'Editar';
+        editButton.className = 'edit-button';
         editButton.onclick = () => editItem(index);
         tdActions.appendChild(editButton);
-        
+
         // Botón de eliminar
         const deleteButton = document.createElement('button');
         deleteButton.textContent = 'Eliminar';
+        deleteButton.className = 'delete-button';
         deleteButton.onclick = () => deleteItem(index);
         tdActions.appendChild(deleteButton);
+
+
 
         tr.appendChild(tdActions);
         itemList.appendChild(tr);
