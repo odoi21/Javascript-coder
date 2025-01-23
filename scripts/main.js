@@ -132,13 +132,26 @@ document.getElementById('searchButton').addEventListener('click', function() {
     }
 });
 
-
-
 // Función para filtrar elementos según la búsqueda
 searchBar.addEventListener('input', function () {
     const searchValue = this.value.toLowerCase();
     const filteredItems = items.filter(item => item.name.toLowerCase().includes(searchValue));
     renderItems(filteredItems);
+});
+
+//filtrar por desaprobados aprobados y num de clases
+
+
+
+//ClearButton para eliminar toda la planilla de una 
+
+document.getElementById('clearButton').addEventListener('click', function() {
+    // Confirmar la acción
+    if (confirm("¿Estás seguro de que deseas eliminar toda la planilla? Esta acción no se puede deshacer.")) {
+        items = []; // Vaciar el array de items
+        localStorage.removeItem('items'); // Eliminar los datos de localStorage
+        renderItems(); // Volver a renderizar la lista (que ahora estará vacía)
+    }
 });
 
 // Cargar elementos al iniciar

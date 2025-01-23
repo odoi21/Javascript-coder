@@ -19,6 +19,21 @@ h1 {
     text-align: center;
 }
 
+.Options {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin-right: 40px;
+}
+
+.btn {
+    margin-left: 20px;
+}
+
+#searchBar {
+    display: none;
+}
+
 form {
     margin-top: 100px;
     width: 100%;
@@ -62,8 +77,4 @@ th, td {
     border: 10px solid #000000;
     padding: 8px;
     text-align: left;
-}
-
-#searchBar {
-    display: none;
 }
