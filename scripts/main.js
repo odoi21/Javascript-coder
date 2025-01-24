@@ -1,4 +1,8 @@
-alert("Hola, Bienvenido a Register-List. Esta es una app web donde podrás llevar una planilla como por ejemplo de estudiantes con su información: Nombre y Apellido.");
+//funcion para que cuando abra la web salga la alerta de sweet alert
+window.onload = function () {
+    Swal.fire("Hola,Bienvenido a Register-List. Esta es una app web donde podrás llevar una planilla de estudiantes con su información y notas")
+}
+
 
 let items = [];
 let cambioIndex = -1;
@@ -130,10 +134,27 @@ function editItem(index) {
 
 // Función para eliminar un elemento
 function deleteItem(index) {
-    items.splice(index, 1);
-    // Actualizar localStorage después de eliminar
-    localStorage.setItem('items', JSON.stringify(items));
-    renderItems(); // Renderizar los elementos después de eliminar
+    Swal.fire({
+        title: "Deseas eliminar al esudiante de la planilla?",
+        text: "Esta accion no se puede revertir",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Si, Eliminar!"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+                title: "Eliminado!",
+                text: "Los datos del  Estudiante han sido eliminado de la planilla.",
+                icon: "success"
+            });
+            items.splice(index, 1);
+            // Actualizar localStorage después de eliminar
+            localStorage.setItem('items', JSON.stringify(items));
+            renderItems(); // Renderizar los elementos después de eliminar
+        }
+    });
 }
 
 //Evento para mostrar y ocultar el input del search
