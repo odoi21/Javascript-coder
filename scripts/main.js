@@ -85,6 +85,23 @@ form.addEventListener('submit', function (event) {
     if (cambioIndex === -1) {
         // Crear
         items.push({ name: nameValue, gmail: gmailValue, class: classValue, promedio: promedio.toFixed(2), estado: estado });
+        //Toast para cuando se agrega algo a la tabla
+        const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.onmouseenter = Swal.stopTimer;
+                toast.onmouseleave = Swal.resumeTimer;
+            }
+        });
+        Toast.fire({
+            icon: "success",
+            title: "Se ha agregado correctamente"
+        });
+
     } else {
         // Actualizar
         items[cambioIndex] = { name: nameValue, gmail: gmailValue, class: classValue, promedio: promedio.toFixed(2), estado: estado };
@@ -121,12 +138,12 @@ function deleteItem(index) {
 
 //Evento para mostrar y ocultar el input del search
 
-document.getElementById('searchButton').addEventListener('click', function() {
+document.getElementById('searchButton').addEventListener('click', function () {
     const searchInput = document.getElementById('searchBar');
     // Alternar la visibilidad del input
-    if (searchInput.style.display === 'none' || searchInput.style.display === '')  {
+    if (searchInput.style.display === 'none' || searchInput.style.display === '') {
         searchInput.style.display = 'block'; // Mostrar el input
-    } 
+    }
     else {
         searchInput.style.display = 'none'; // Ocultar el input
     }
@@ -144,14 +161,47 @@ searchBar.addEventListener('input', function () {
 
 
 //ClearButton para eliminar toda la planilla de una 
+document.getElementById('clearButton').addEventListener('click', function () {
 
-document.getElementById('clearButton').addEventListener('click', function() {
     // Confirmar la acción
-    if (confirm("¿Estás seguro de que deseas eliminar toda la planilla? Esta acción no se puede deshacer.")) {
-        items = []; // Vaciar el array de items
-        localStorage.removeItem('items'); // Eliminar los datos de localStorage
-        renderItems(); // Volver a renderizar la lista (que ahora estará vacía)
-    }
+    const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+            confirmButton: "btn btn-success",
+            cancelButton: "btn btn-danger"
+        },
+        buttonsStyling: false
+    });
+
+    swalWithBootstrapButtons.fire({
+        title: "¿Estás seguro?",
+        text: "¡No podrás revertir esto!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Sí, eliminarlo!",
+        cancelButtonText: "No, cancelar!",
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Si el usuario confirma la eliminación
+            items = []; // Vaciar el array de items
+            localStorage.removeItem('items'); // Eliminar los datos de localStorage
+            renderItems(); // Volver a renderizar la lista (que ahora estará vacía)
+
+            // Mostrar mensaje de éxito
+            swalWithBootstrapButtons.fire({
+                title: "¡Eliminado!",
+                text: "Tu planilla ha sido eliminada.",
+                icon: "success"
+            });
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+            // Si el usuario cancela la acción
+            swalWithBootstrapButtons.fire({
+                title: "Cancelado",
+                text: "Tu planilla está a salvo",
+                icon: "error"
+            });
+        }
+    });
 });
 
 // Cargar elementos al iniciar
