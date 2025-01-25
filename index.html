@@ -12,9 +12,7 @@
 
 <body>
     <h1>Registro de Estudiantes</h1>
-    
     <div class="Options">
-
         <div class="btn-group">
             <button type="button" id="searchButton" class="btn btn-sm data-bs-toggle"><img src="search.svg" alt=""></button>
             <input type="text" id="searchBar" placeholder="Buscar por nombre">
@@ -33,13 +31,16 @@
             <button type="button" id="clearButton" class="btn btn-sm data-bs-toggle"><img src="trash.svg" alt=""></button>
         </div>
     </div>
-    <form id="formStudients">
-        <input type="text" id="nameSurname" placeholder="Nombre y Apellido del alumno" required>
-        <input type="email" id="gmail" placeholder="Ingrese el Mail del alumno" required>
-        <input type="text" id="classNumber" pattern="[0-9]*" placeholder="Ingrese el N° de clase" required>
-        <input type="text" id="notas" placeholder="Ingrese las notas separado en comas">
-        <button class="submit" type="submit">Agregar</button>
-    </form>
+    <div class="form">
+        <form  id="formStudients">
+            <input class="input "  type="text" id="nameSurname" placeholder="Nombre y Apellido" required>
+            <input class="input " type="email" id="gmail" placeholder="Ingrese el Mail del alumno" required>
+            <input class="input " type="text" id="classNumber" pattern="[0-9]*" placeholder="Ingrese el N° de clase" required>
+            <input class="input " type="text" id="notas" placeholder="Ingrese las notas entre comas">
+            <button class="submit" type="submit">Agregar</button>
+        </form>
+    </div>
+
     <table class="table table-hover" id="itemTable">
         <thead>
             <tr>
@@ -62,3 +63,6 @@
 </body>
 
 </html>
+
+
+
