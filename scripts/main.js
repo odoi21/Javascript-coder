@@ -47,7 +47,7 @@ function renderItems(filteredItems = items) {
         tr.appendChild(tdPromedio);
 
         const tdEstado = document.createElement('td');
-        tdEstado.textContent = item.estado; // Mostrar estado (Aprobado/Desaprobado)
+        tdEstado.textContent = item.estado; // Mostrar estado Aprobado/Desaprobado
         tr.appendChild(tdEstado);
 
         // Columna de acciones

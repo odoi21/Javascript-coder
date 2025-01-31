@@ -4,6 +4,7 @@
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
+    
     /*te ayuda para ver todas las cajas de la pagina*/
     /*border: 1px black solid;*/
 }
@@ -62,7 +63,7 @@ form {
 }   
 
 .input:focus {
-    border-bottom: #2c9caf   4px solid;
+    border-bottom: #2c9caf   3px solid;
     transition: ease-in 0.5s;
     transform: scale(1.1);
 }
