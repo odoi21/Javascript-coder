@@ -1,0 +1,273 @@
+
+[
+    {
+        "id": 1,
+        "nombre": "Juan Pérez",
+        "correo": "juan.perez@example.com",
+        "numeroClase": "101",
+        "notas": [8.5, 9.0, 7.5],
+        "promedio": 8.33,
+        "estado": "Aprobado"
+    },
+    {
+        "id": 2,
+        "nombre": "María López",
+        "correo": "maria.lopez@example.com",
+        "numeroClase": "102",
+        "notas": [9.0, 8.0, 9.5],
+        "promedio": 8.83,
+        "estado": "Aprobado"
+    },
+    {
+        "id": 3,
+        "nombre": "Carlos García",
+        "correo": "carlos.garcia@example.com",
+        "numeroClase": "103",
+        "notas": [7.5, 8.0, 6.5],
+        "promedio": 7.33,
+        "estado": "Aprobado"
+    },
+    {
+        "id": 4,
+        "nombre": "Ana Torres",
+        "correo": "ana.torres@example.com",
+        "numeroClase": "104",
+        "notas": [9.5, 9.0, 10.0],
+        "promedio": 9.50,
+        "estado": "Aprobado"
+    },
+    {
+        "id": 5,
+        "nombre": "Luis Martínez",
+        "correo": "luis.martinez@example.com",
+        "numeroClase": "105",
+        "notas": [6.0, 7.5, 8.0],
+        "promedio": 7.17,
+        "estado": "Aprobado"
+    },
+    {
+        "id": 6,
+        "nombre": "Sofía Rodríguez",
+        "correo": "sofia.rodriguez@example.com",
+        "numeroClase": "106",
+        "notas": [8.0, 8.5, 9.0],
+        "promedio": 8.50,
+        "estado": "Aprobado"
+    },
+    {
+        "id": 7,
+        "nombre": "Diego Fernández",
+        "correo": "diego.fernandez@example.com",
+        "numeroClase": "107",
+        "notas": [7.0, 6.5, 7.5],
+        "promedio": 7.00,
+        "estado": "Aprobado"
+    },
+    {
+        "id": 8,
+        "nombre": "Valentina Gómez",
+        "correo": "valentina.gomez@example.com",
+        "numeroClase": "108",
+        "notas": [9.0, 9.5, 8.5],
+        "promedio": 9.00,
+        "estado": "Aprobado"
+    },
+    {
+        "id": 9,
+        "nombre": "Mateo Jiménez",
+        "correo": "mateo.jimenez@example.com",
+        "numeroClase": "109",
+        "notas": [8.5, 7.0, 9.0],
+        "promedio": 8.20,
+        "estado": "Aprobado"
+    },
+    {
+        "id": 10,
+        "nombre": "Isabella Castro",
+        "correo": "isabella.castro@example.com",
+        "numeroClase": "110",
+        "notas": [10.0, 9.5, 9.0],
+        "promedio": 9.50,
+        "estado": "Aprobado"
+    },
+    {
+        "id": 11,
+        "nombre": "Sebastián Ruiz",
+        "correo": "sebastian.ruiz@example.com",
+        "numeroClase": "111",
+        "notas": [6.5, 7.0, 8.0],
+        "promedio": 7.17,
+        "estado": "Aprobado"
+    },
+    {
+        "id": 12,
+        "nombre": "Camila Morales",
+        "correo": "camila.morales@example.com",
+        "numeroClase": "112",
+        "notas": [9.0,  8.5, 9.5],
+        "promedio": 9.00,
+        "estado": "Aprobado"
+    },
+    {
+        "id": 13,
+        "nombre": "Fernando Díaz",
+        "correo": "fernando.diaz@example.com",
+        "numeroClase": "113",
+        "notas": [7.0, 6.0, 5.5],
+        "promedio": 6.17,
+        "estado": "Desaprobado"
+    },
+    {
+        "id": 14,
+        "nombre": "Lucía Herrera",
+        "correo": "lucia.herrera@example.com",
+        "numeroClase": "114",
+        "notas": [9.5, 10.0, 9.0],
+        "promedio": 9.50,
+        "estado": "Aprobado"
+    },
+    {
+        "id": 15,
+        "nombre": "Javier Morales",
+        "correo": "javier.morales@example.com",
+        "numeroClase": "115",
+        "notas": [8.0, 7.5, 8.5],
+        "promedio": 8.33,
+        "estado": "Aprobado"
+    },
+    {
+        "id": 16,
+        "nombre": "Natalia Ríos",
+        "correo": "natalia.rios@example.com",
+        "numeroClase": "116",
+        "notas": [6.5, 7.0, 6.0],
+        "promedio": 6.50,
+        "estado": "Desaprobado"
+    },
+    {
+        "id": 17,
+        "nombre": "Andrés Torres",
+        "correo": "andres.torres@example.com",
+        "numeroClase": "117",
+        "notas": [9.0, 8.5, 9.5],
+        "promedio": 9.00,
+        "estado": "Aprobado"
+    },
+    {
+        "id": 18,
+        "nombre": "Gabriela Salazar",
+        "correo": "gabriela.salazar@example.com",
+        "numeroClase": "118",
+        "notas": [7.5, 8.0, 7.0],
+        "promedio": 7.50,
+        "estado": "Aprobado"
+    },
+    {
+        "id": 19,
+        "nombre": "Pablo Castro",
+        "correo": "pablo.castro@example.com",
+        "numeroClase": "119",
+        "notas": [5.0, 6.0, 5.5],
+        "promedio": 5.50,
+        "estado": "Desaprobado"
+    },
+    {
+        "id": 20,
+        "nombre": "Clara Mendoza",
+        "correo": "clara.mendoza@example.com",
+        "numeroClase": "120",
+        "notas": [9.5, 9.0, 10.0],
+        "promedio": 9.50,
+        "estado": "Aprobado"
+    },
+    {
+        "id": 21,
+        "nombre": "Ricardo Soto",
+        "correo": "ricardo.soto@example.com",
+        "numeroClase": "121",
+        "notas": [8.0, 7.0, 6.5],
+        "promedio": 7.17,
+        "estado": "Aprobado"
+    },
+    {
+        "id": 22,
+        "nombre": "Samantha Vega",
+        "correo": "samantha.vega@example.com",
+        "numeroClase": "122",
+        "notas": [9.0, 8.5, 9.5],
+        "promedio": 9.00,
+        "estado": "Aprobado"
+    },
+    {
+        "id": 23,
+        "nombre": "Emilio Castro",
+        "correo": "emilio.castro@example.com",
+        "numeroClase": "123",
+        "notas": [6.0, 5.5, 6.5],
+        "promedio": 6.00,
+        "estado": "Desaprobado"
+    },
+    {
+        "id": 24,
+        "nombre": "Victoria López",
+        "correo": "victoria.lopez@example.com",
+        "numeroClase": "124",
+        "notas": [9.5, 10.0, 9.0],
+        "promedio": 9.50,
+        "estado": "Aprobado"
+    },
+    {
+        "id": 25,
+        "nombre": "Hugo Pérez",
+        "correo": "hugo.perez@example.com",
+        "numeroClase": "125",
+        "notas": [7.0, 8.0, 6.5],
+        "promedio": 7.17,
+        "estado": "Aprobado"
+    },
+    {
+        "id": 26,
+        "nombre": "Marta Jiménez",
+        "correo": "marta.jimenez@example.com",
+        "numeroClase": "126",
+        "notas": [9.0, 9.5, 8.0],
+        "promedio": 8.83,
+        "estado": "Aprobado"
+    },
+    {
+        "id": 27,
+        "nombre": "Fernando López",
+        "correo": "fernando.lopez@example.com",
+        "numeroClase": "127",
+        "notas": [6.5, 7.0, 6.0],
+        "promedio": 6.50,
+        "estado": "Desaprobado"
+    },
+    {
+        "id": 28,
+        "nombre": "Luciana Torres",
+        "correo": "luciana.torres@example.com",
+        "numeroClase": "128",
+        "notas": [9.5, 10.0, 9.5],
+        "promedio": 9.67,
+        "estado": "Aprobado"
+    },
+    {
+        "id": 29,
+        "nombre": "Joaquín Ríos",
+        "correo": "joaquin.rios@example.com",
+        "numeroClase": "129",
+        "notas": [8.0, 7.5, 8.5],
+        "promedio": 8.33,
+        "estado": "Aprobado"
+    },
+    {
+        "id": 30,
+        "nombre": "Renata Salas",
+        "correo": "renata.salas@example.com",
+        "numeroClase": "130",
+        "notas": [5.5, 6.0, 5.0],
+        "promedio": 5.50,
+        "estado": "Desaprobado"
+    }
+]

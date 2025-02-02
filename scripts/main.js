@@ -24,6 +24,33 @@ function loadItems() {
     }
 }
 
+function loadAlumnos() {
+    fetch('alumnos.json') 
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error en la red: ' + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Datos cargados:', data);
+            items = data;
+            localStorage.setItem('items', JSON.stringify(items));
+            
+            setTimeout(() => {
+                renderItems(); 
+            }, 2000); 
+        })
+        .catch(error => {
+            console.error('Error al cargar los datos:', error);
+            alert('No se pudieron cargar los datos. Intenta de nuevo más tarde.');
+            
+        });
+}
+
+
+
+
 // Función para renderizar los elementos
 function renderItems(filteredItems = items) {
     itemList.innerHTML = ''; // Limpiar la tabla
@@ -31,15 +58,15 @@ function renderItems(filteredItems = items) {
         const tr = document.createElement('tr');
 
         const tdName = document.createElement('td');
-        tdName.textContent = item.name; // Mostrar nombre
+        tdName.textContent = item.nombre; // Mostrar nombre
         tr.appendChild(tdName);
 
         const tdGmail = document.createElement('td');
-        tdGmail.textContent = item.gmail; // Mostrar correo
+        tdGmail.textContent = item.correo; // Mostrar correo
         tr.appendChild(tdGmail);
 
         const tdClass = document.createElement('td');
-        tdClass.textContent = item.class; // Mostrar número de clase
+        tdClass.textContent = item.numeroClase; // Mostrar número de clase
         tr.appendChild(tdClass);
 
         const tdPromedio = document.createElement('td');
@@ -88,7 +115,7 @@ form.addEventListener('submit', function (event) {
 
     if (cambioIndex === -1) {
         // Crear
-        items.push({ name: nameValue, gmail: gmailValue, class: classValue, promedio: promedio.toFixed(2), estado: estado });
+        items.push({ nombre: nameValue, correo: gmailValue, numeroClase: classValue, promedio: promedio.toFixed(2), estado: estado });
         //Toast para cuando se agrega algo a la tabla
         const Toast = Swal.mixin({
             toast: true,
@@ -108,7 +135,7 @@ form.addEventListener('submit', function (event) {
 
     } else {
         // Actualizar
-        items[cambioIndex] = { name: nameValue, gmail: gmailValue, class: classValue, promedio: promedio.toFixed(2), estado: estado };
+        items[cambioIndex] = { nombre: nameValue, correo: gmailValue, numeroClase: classValue, promedio: promedio.toFixed(2), estado: estado };
         cambioIndex = -1; // Resetear el índice de edición
     }
 
@@ -125,9 +152,9 @@ form.addEventListener('submit', function (event) {
 
 // Función para editar un elemento
 function editItem(index) {
-    surName.value = items[index].name;
-    gmail.value = items[index].gmail;
-    classNumber.value = items[index].class;
+    surName.value = items[index].nombre;
+    gmail.value = items[index].correo;
+    classNumber.value = items[index].numeroClase;
     notas.value = ''; // Limpiar el campo de notas para la edición
     cambioIndex = index; // Establecer el índice de edición
 }
@@ -226,4 +253,5 @@ document.getElementById('clearButton').addEventListener('click', function () {
 });
 
 // Cargar elementos al iniciar
+loadAlumnos();
 loadItems();
