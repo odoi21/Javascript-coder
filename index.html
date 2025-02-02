@@ -14,28 +14,29 @@
     <h1>Registro de Estudiantes</h1>
     <div class="Options">
         <div class="btn-group">
-            <button type="button" id="searchButton" class="btn btn-sm data-bs-toggle"><img src="search.svg" alt=""></button>
+            <button type="button" id="searchButton" class="btn btn-sm data-bs-toggle"><img src="search.svg"alt=""></button>
             <input type="text" id="searchBar" placeholder="Buscar por nombre">
         </div>
-
+        
         <div class="btn-group">
-            <button type="button" class="btn btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><img src="filter.svg" alt=""></button>
+            <button type="button" class="btn btn-sm dropdown-toggle" data-bs-toggle="dropdown"aria-expanded="false"><img src="filter.svg" alt=""></button>
             <ul class="dropdown-menu">
+                <li><a class="dropdown-item" id="todos" href="#">Todos</a></li>
                 <li><a class="dropdown-item" id="filterAprobado" href="#">Aprobado</a></li>
                 <li><a class="dropdown-item" id="filterDesaprobado" href="#">Desaprobados</a></li>
                 <li><a class="dropdown-item" id="filterNumberClass" href="#">N de clase</a></li>
             </ul>
         </div>
-    
+
         <div class="btn-group">
-            <button type="button" id="clearButton" class="btn btn-sm data-bs-toggle"><img src="trash.svg" alt=""></button>
+            <button type="button" id="clearButton" class="btn btn-sm data-bs-toggle"><img src="trash.svg"alt=""></button>
         </div>
     </div>
     <div class="form">
-        <form  id="formStudients">
-            <input class="input "  type="text" id="nameSurname" placeholder="Nombre y Apellido" required>
+        <form id="formStudients">
+            <input class="input " type="text" id="nameSurname" placeholder="Nombre y Apellido" required>
             <input class="input " type="email" id="gmail" placeholder="Ingrese el Mail del alumno" required>
-            <input class="input " type="text" id="classNumber" pattern="[0-9]*" placeholder="Ingrese el N° de clase" required>
+            <input class="input " type="text" id="classNumber" pattern="[0-9]*" placeholder="Ingrese el N° de clase"required>
             <input class="input " type="text" id="notas" placeholder="Ingrese las notas entre comas">
             <button class="submit" type="submit">Agregar</button>
         </form>
@@ -56,7 +57,7 @@
             <tbody id="itemList"></tbody>
         </table>
     </div>
-    
+
 
     <script src="scripts/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -66,6 +67,3 @@
 </body>
 
 </html>
-
-
-

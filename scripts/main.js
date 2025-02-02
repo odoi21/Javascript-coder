@@ -39,7 +39,7 @@ function loadAlumnos() {
             
             setTimeout(() => {
                 renderItems(); 
-            }, 2000); 
+            }, 1000); 
         })
         .catch(error => {
             console.error('Error al cargar los datos:', error);
@@ -200,13 +200,49 @@ document.getElementById('searchButton').addEventListener('click', function () {
 // Función para filtrar elementos según la búsqueda
 searchBar.addEventListener('input', function () {
     const searchValue = this.value.toLowerCase();
-    const filteredItems = items.filter(item => item.name.toLowerCase().includes(searchValue));
+    const filteredItems = items.filter(item => item.nombre.toLowerCase().includes(searchValue));
     renderItems(filteredItems);
 });
 
 //filtrar por desaprobados aprobados y num de clases
 
+// Función para filtrar por estado
+function filterByStatus(status) {
+    return items.filter(item => {
+        return status ? item.estado === status : true;
+    });
+}
 
+// Función para filtrar por número de clase
+function filterByClass(classNumber) {
+    return items.filter(item => {
+        return classNumber ? item.numeroClase === classNumber : true;
+    });
+}
+
+// Eventos para los filtros
+document.getElementById('todos').addEventListener('click', function () {
+    renderItems(items); 
+});
+
+document.getElementById('filterAprobado').addEventListener('click', function () {
+    const filteredItems = filterByStatus('Aprobado');
+    renderItems(filteredItems); 
+});
+
+document.getElementById('filterDesaprobado').addEventListener('click', function () {
+    const filteredItems = filterByStatus('Desaprobado');
+    renderItems(filteredItems); 
+});
+
+// Evento para filtrar por número de clase
+document.getElementById('filterNumberClass').addEventListener('click', function () {
+    const classValue = prompt("Ingrese el número de clase:");
+    if (classValue) {
+        const filteredItems = filterByClass(classValue);
+        renderItems(filteredItems); 
+    }
+});
 
 //ClearButton para eliminar toda la planilla de una 
 document.getElementById('clearButton').addEventListener('click', function () {
